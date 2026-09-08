@@ -1,0 +1,6 @@
+﻿playtime_group,review_count,positive_rate,median_playtime_hours
+Under 10 hours,602,76.08,3.82
+10-25 hours,405,83.46,15.75
+25-75 hours,494,80.36,41.89
+75-200 hours,333,73.57,109.5
+Over 200 hours,166,60.84,293.84

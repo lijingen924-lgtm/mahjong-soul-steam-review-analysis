@@ -1,0 +1,7 @@
+.idea/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Raw review datasets
+mahjong_soul_steam_reviews*.csv
