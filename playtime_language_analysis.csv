@@ -1,0 +1,25 @@
+﻿language,playtime_group,review_count,positive_reviews,positive_rate
+brazilian,Under 10 hours,12,10,83.33
+brazilian,10-25 hours,18,17,94.44
+brazilian,25-75 hours,16,13,81.25
+brazilian,75-200 hours,5,5,100.0
+english,Under 10 hours,316,245,77.53
+english,10-25 hours,223,195,87.44
+english,25-75 hours,242,204,84.3
+english,75-200 hours,165,131,79.39
+english,Over 200 hours,67,49,73.13
+koreana,Under 10 hours,158,124,78.48
+koreana,10-25 hours,109,86,78.9
+koreana,25-75 hours,165,121,73.33
+koreana,75-200 hours,116,80,68.97
+koreana,Over 200 hours,74,38,51.35
+russian,Under 10 hours,47,27,57.45
+russian,10-25 hours,25,23,92.0
+russian,25-75 hours,22,19,86.36
+russian,75-200 hours,20,14,70.0
+russian,Over 200 hours,9,6,66.67
+schinese,Under 10 hours,16,7,43.75
+schinese,10-25 hours,11,2,18.18
+schinese,25-75 hours,7,4,57.14
+schinese,75-200 hours,10,3,30.0
+schinese,Over 200 hours,6,1,16.67

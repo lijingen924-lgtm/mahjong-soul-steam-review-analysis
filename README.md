@@ -26,11 +26,12 @@ The raw review dataset is not stored in this repository but can be regenerated u
 
 ## Key Findings
 
-* The overall positive rating rate is **76.95%**.
-* Among language categories with 50 or more reviews, Brazilian Portuguese and English reviews have higher positive rating rates.
-* Among the language categories shown, Simplified Chinese reviews have the lowest positive rating rate.
-* Players with playtimes between 10 and 25 hours had the highest positive review rate, while those with playtimes exceeding 200 hours had the lowest.
-* The monthly positive review rate fluctuated (Note: Data for the first and last months is incomplete).
+* The overall positive review rate was 76.95%.
+* The continuous logistic model found no significant linear association between playtime and recommendation after controlling for language and review month (OR = 0.963, p = .484).
+* The categorical model found significant nonlinear differences across playtime groups (LR p < .001).
+* Compared with players under 10 hours, the 10–25 hour group had higher odds of recommending the game (OR = 1.62, p = .005), while the 200+ hour group had lower odds (OR = 0.53, p = .001).
+* Among English and Korean negative reviews, 200+ hour players more frequently mentioned perceived unfairness, competitive integrity, and frustration or burnout.
+* These findings represent associations and do not establish causation.
 
 ## Statistical Analysis
 
@@ -43,10 +44,31 @@ Logistic regression analysis was performed at the review level to test whether p
 
 Therefore, differences between groups with varying playtimes should be viewed as descriptive associations rather than evidence of a causal relationship.
 
-## Dashboard
+## Additional Analysis
 
-[View the interactive dashboard on Tableau Public](https://public.tableau.com/views/mahjongsoulanalysis/MahjongSoulSteamReviewAnalysis?:language=en-US&:sid=&:redirect=auth&publish=yes&showOnboarding=true&:display_count=n&:origin=viz_share_link)
-![Mahjong Soul Steam Review Dashboard](./dashboard.png)
+### Playtime Group Regression
+
+A categorical logistic regression was used to examine nonlinear differences across five playtime groups while controlling for review language and review month.
+
+### Language and Playtime Analysis
+
+A heatmap compares positive review rates across language and playtime segments. Segments with fewer than 20 reviews are excluded to reduce instability from small sample sizes.
+
+### Negative Review Topic Analysis
+
+English and Korean negative reviews were classified using a bilingual keyword-based approach. The analysis compares topic prevalence between players with over 200 hours and those with under 200 hours. Categories may overlap, and the results should be interpreted as exploratory.
+
+## Dashboards
+
+[View the interactive dashboard on Tableau Public](https://public.tableau.com/views/mahjongsoulanalysis/PlaytimeDeepDive?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+### Overview Dashboard
+
+![Overview Dashboard](Mahjong-Soul-Overview.png)
+
+### Playtime Deep Dive
+
+![Playtime Deep Dive](Mahjong-Soul-Playtime-Deep-Dive.png)
 
 ## Repository Files
 
@@ -58,6 +80,12 @@ Therefore, differences between groups with varying playtimes should be viewed as
 * `logistic_regression_results.csv` — Logistic regression results
 * `requirements.txt` — Required Python packages
 * `dashboard.png` — Dashboard preview image
+* `playtime_group_analysis.py` — Runs categorical playtime-group logistic regression
+* `playtime_group_regression_results.csv` — Regression estimates by playtime group
+* `playtime_language_analysis.py` — Produces language-by-playtime statistics
+* `playtime_language_analysis.csv` — Data used for the heatmap
+* `review_topic_analysis.py` — Performs exploratory negative-review topic analysis
+* `negative_review_topic_comparison.csv` — Topic comparison results
 
 ## How to Run
 

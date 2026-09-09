@@ -1,0 +1,6 @@
+﻿playtime_group,review_count,observed_positive_rate,adjusted_positive_rate,coefficient,odds_ratio,ci_lower,ci_upper,p_value
+Under 10 hours,602,76.0797,75.7397,0.0,1.0,,,
+10-25 hours,405,83.4568,83.174,0.4815,1.6185,1.1605,2.2573,0.0046
+25-75 hours,494,80.3644,79.7499,0.2435,1.2757,0.9465,1.7194,0.1098
+75-200 hours,333,73.5736,74.7067,-0.0581,0.9435,0.6867,1.2964,0.7199
+Over 200 hours,166,60.8434,63.204,-0.6265,0.5345,0.3671,0.7781,0.0011

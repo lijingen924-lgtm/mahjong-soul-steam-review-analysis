@@ -1,0 +1,6 @@
+﻿topic,over_200_mentions,over_200_negative_reviews,over_200_topic_share,under_200_mentions,under_200_negative_reviews,under_200_topic_share,odds_ratio,p_value
+RNG / perceived unfairness,26,54,48.1481,78,308,25.3247,2.7381,0.001
+Cheating / competitive integrity,7,54,12.963,9,308,2.9221,4.948,0.0044
+Monetization / gacha,12,54,22.2222,40,308,12.987,1.9143,0.091
+Operations / content / technical,6,54,11.1111,20,308,6.4935,1.8,0.2498
+Frustration / burnout,33,54,61.1111,63,308,20.4545,6.1111,0.0
