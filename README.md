@@ -9,7 +9,8 @@ This project analyzed 2,000 recent Steam reviews for “Mahjong Soul” to exami
 * How has the positive review rate changed over time?
 * Are there differences in the positive review rate among reviews in different languages?
 * How does the positive review rate differ among players in different playtime ranges?
-* Is there a significant correlation between players’ playtime and the game’s recommendation status?
+* Is player playtime significantly associated with recommendation status after controlling for language and review month?
+* Do the topics mentioned in negative reviews differ between long-playtime and shorter-playtime players?
 
 ## Data Sources
 
@@ -23,6 +24,7 @@ The raw review dataset is not stored in this repository but can be regenerated u
 * **Statsmodels:** Logistic regression analysis at the review level
 * **Tableau Public:** Dashboards and data visualization
 * **Git and GitHub:** Version control and project documentation management
+* **SciPy:** Fisher’s exact tests for exploratory topic comparisons
 
 ## Key Findings
 
@@ -35,14 +37,13 @@ The raw review dataset is not stored in this repository but can be regenerated u
 
 ## Statistical Analysis
 
-Logistic regression analysis was performed at the review level to test whether playtime could predict whether a review was positive or negative. After controlling for review language and review month, playtime was not a statistically significant predictor of positive review behavior:
+Two logistic regression models were used to examine the relationship between playtime and recommendation status while controlling for review language and review month.
 
-* **Odds ratio:** 0.963
-* **95% confidence interval:** [0.865, 1.071]
-* **p-value:** 0.484
-* **Pseudo R²:** 0.041
+The continuous model found no significant linear association between playtime and recommendation status (OR = 0.963, 95% CI [0.865, 1.071], p = .484).
 
-Therefore, differences between groups with varying playtimes should be viewed as descriptive associations rather than evidence of a causal relationship.
+However, the categorical model found significant nonlinear differences across playtime groups (LR p < .001). Compared with players under 10 hours, the 10–25 hour group had higher odds of recommending the game (OR = 1.62, p = .005), while the 200+ hour group had lower odds (OR = 0.53, p = .001).
+
+These results indicate an association rather than a causal relationship.
 
 ## Additional Analysis
 
@@ -106,7 +107,20 @@ Run the logistic regression analysis:
 ```bash
 python logistic_analysis.py
 ```
+Run the categorical playtime-group regression:
 
+```bash
+python playtime_group_analysis.py
+```
+Generate the language-by-playtime data:
+
+```bash
+python playtime_language_analysis.py
+```
+Run the exploratory negative-review topic analysis:
+```bash
+python review_topic_analysis.py
+```
 ## Limitations
 
 * This analysis uses a sample of 2,000 recent reviews, not all historical reviews.
@@ -114,3 +128,5 @@ python logistic_analysis.py
 * Data for the start and end months is incomplete.
 * Observational data can only identify correlations; it cannot establish causation.
 * Some variables related to Steam purchases have only a single value and cannot be included in the regression analysis as control variables.
+* The keyword-based topic classification is exploratory, categories may overlap, and the results are limited to English and Korean negative reviews.
+* Language–playtime segments with fewer than 20 reviews are excluded from the
