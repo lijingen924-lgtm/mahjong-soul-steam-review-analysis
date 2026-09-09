@@ -46,7 +46,7 @@ Therefore, differences between groups with varying playtimes should be viewed as
 ## Dashboard
 
 [View the interactive dashboard on Tableau Public](https://public.tableau.com/views/mahjongsoulanalysis/MahjongSoulSteamReviewAnalysis?:language=en-US&:sid=&:redirect=auth&publish=yes&showOnboarding=true&:display_count=n&:origin=viz_share_link)
-![Mahjong Soul Steam Review Dashboard](dashboard.png)
+![Mahjong Soul Steam Review Dashboard](./dashboard.png)
 
 ## Repository Files
 
