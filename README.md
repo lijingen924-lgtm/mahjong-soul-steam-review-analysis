@@ -2,8 +2,7 @@
 
 ## Project Overview
 
-This project analyzed 2,000 recent Steam reviews for “Mahjong Soul” to examine how the positive review rate varies over time, by review language, and by player playtime. The project used Python for data collection, cleaning, aggregation, and statistical analysis, and utilized Tableau Public to create an interactive dashboard.
-
+This project analyzes 2,000 recent Steam reviews for *Mahjong Soul* to examine how recommendation rates vary over time, across review languages, and among player playtime groups. An end-to-end Python workflow was used for API data collection, cleaning, feature engineering, aggregation, logistic regression, and exploratory topic analysis. Two interactive Tableau Public dashboards present the overall results and the playtime deep-dive analysis.
 ## Research Questions
 
 * How has the positive review rate changed over time?
@@ -15,6 +14,7 @@ This project analyzed 2,000 recent Steam reviews for “Mahjong Soul” to exami
 ## Data Sources
 
 Review data was collected via the Steam API from *Mahjong Soul* (Steam App ID: `2739990`). The dataset contains 2,000 recent reviews.
+Because Steam reviews change over time and the raw review dataset is not included, rerunning the collection script may produce different results from those reported here.
 
 The raw review dataset is not stored in this repository but can be regenerated using the Python data collection script.
 ## Tools and Methods
@@ -32,7 +32,7 @@ The raw review dataset is not stored in this repository but can be regenerated u
 * The continuous logistic model found no significant linear association between playtime and recommendation after controlling for language and review month (OR = 0.963, p = .484).
 * The categorical model found significant nonlinear differences across playtime groups (LR p < .001).
 * Compared with players under 10 hours, the 10–25 hour group had higher odds of recommending the game (OR = 1.62, p = .005), while the 200+ hour group had lower odds (OR = 0.53, p = .001).
-* Among English and Korean negative reviews, 200+ hour players more frequently mentioned perceived unfairness, competitive integrity, and frustration or burnout.
+* In the exploratory keyword analysis of English and Korean negative reviews, selected complaint themes appeared more frequently in reviews from the 200+ hour group. These patterns depend on the keyword definitions and should be interpreted cautiously.
 * These findings represent associations and do not establish causation.
 
 ## Statistical Analysis
@@ -65,13 +65,14 @@ English and Korean negative reviews were classified using a bilingual keyword-ba
 
 ### Overview Dashboard
 
-![Overview Dashboard](Mahjong-Soul-Overview.png)
+* `Mahjong-Soul-Overview.png` — Overview dashboard preview
+* `Mahjong-Soul-Playtime-Deep-Dive.png` — Playtime deep-dive dashboard preview
 
 ### Playtime Deep Dive
 
 ![Playtime Deep Dive](Mahjong-Soul-Playtime-Deep-Dive.png)
 
-## Repository Files
+## Key Repository Files
 
 * `Steam_reviews_global.py` — Collects and processes Steam review data
 * `logistic_analysis.py` — Performs logistic regression analysis at the review level
@@ -89,6 +90,8 @@ English and Korean negative reviews were classified using a bilingual keyword-ba
 * `negative_review_topic_comparison.csv` — Topic comparison results
 
 ## How to Run
+
+The analysis scripts expect the generated raw dataset, `mahjong_soul_steam_reviews_2000.csv`, to be stored in the repository root. The file is excluded from GitHub because it contains full review text and can be regenerated using the collection script.
 
 Install the required Python packages:
 
@@ -129,4 +132,4 @@ python review_topic_analysis.py
 * Observational data can only identify correlations; it cannot establish causation.
 * Some variables related to Steam purchases have only a single value and cannot be included in the regression analysis as control variables.
 * The keyword-based topic classification is exploratory, categories may overlap, and the results are limited to English and Korean negative reviews.
-* Language–playtime segments with fewer than 20 reviews are excluded from the
+* Language–playtime segments with fewer than 20 reviews were excluded from the heatmap to avoid presenting unstable percentages.
