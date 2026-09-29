@@ -13,10 +13,7 @@ This project analyzes 2,000 recent Steam reviews for *Mahjong Soul* to examine h
 
 ## Data Sources
 
-Review data was collected via the Steam API from *Mahjong Soul* (Steam App ID: `2739990`). The dataset contains 2,000 recent reviews.
-Because Steam reviews change over time and the raw review dataset is not included, rerunning the collection script may produce different results from those reported here.
-
-The raw review dataset is not stored in this repository but can be regenerated using the Python data collection script.
+Review data were collected via the Steam API from *Mahjong Soul* (Steam App ID: `2739990`). The dataset contains 2,000 recent reviews. The raw dataset is excluded because it contains full review text, but it can be regenerated using the collection script. Because Steam reviews change over time, rerunning the script may produce results that differ from those reported here.
 ## Tools and Methods
 
 * **Python:** API data collection, data cleaning, aggregation, and logistic regression analysis
@@ -65,8 +62,11 @@ English and Korean negative reviews were classified using a bilingual keyword-ba
 
 ### Overview Dashboard
 
-* `Mahjong-Soul-Overview.png` — Overview dashboard preview
-* `Mahjong-Soul-Playtime-Deep-Dive.png` — Playtime deep-dive dashboard preview
+![Overview Dashboard](Mahjong-Soul-Overview.png)
+
+### Playtime Deep Dive
+
+![Playtime Deep Dive](Mahjong-Soul-Playtime-Deep-Dive.png)
 
 ### Playtime Deep Dive
 
@@ -81,13 +81,14 @@ English and Korean negative reviews were classified using a bilingual keyword-ba
 * `playtime_analysis.csv` — Review statistics grouped by playtime
 * `logistic_regression_results.csv` — Logistic regression results
 * `requirements.txt` — Required Python packages
-* `dashboard.png` — Dashboard preview image
 * `playtime_group_analysis.py` — Runs categorical playtime-group logistic regression
 * `playtime_group_regression_results.csv` — Regression estimates by playtime group
 * `playtime_language_analysis.py` — Produces language-by-playtime statistics
 * `playtime_language_analysis.csv` — Data used for the heatmap
 * `review_topic_analysis.py` — Performs exploratory negative-review topic analysis
 * `negative_review_topic_comparison.csv` — Topic comparison results
+* `Mahjong-Soul-Overview.png` — Overview dashboard preview
+* `Mahjong-Soul-Playtime-Deep-Dive.png` — Playtime deep-dive dashboard preview
 
 ## How to Run
 
